@@ -3,10 +3,15 @@
 {% block content %}
 <br>
 <form class="form-inline" action="" method="POST">
-    <input type="text" name="name" class="form-control mb-2 mr-sm-2" placeholder="What is your name?">
-    <button type="submit" class="btn btn-primary mb-2">Submit</button>
+    {{ form.name.label }}
+    <br>
+    {{ form.name(size=16) }}
+    {% for error in form.name.errors %}
+    {{ error }}
+    {% endfor %}
+    {{ form.submit() }}
+    {{ form.hidden_tag() }}
 </form>
-
 {% if name %}
 <h2>Hello, {{ name }}</h2>
 {% endif %}
