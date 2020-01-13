@@ -1,15 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
+{% block title %}{{ super() }} | Welcome{% endblock title %}
+{% block content %}
+<br>
+<form class="form-inline" action="" method="POST">
+    <input type="text" name="name" class="form-control mb-2 mr-sm-2" placeholder="What is your name?">
+    <button type="submit" class="btn btn-primary mb-2">Submit</button>
+</form>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-
-<body>
-    <h1>Hello, world!</h1>
-</body>
-
-</html>
+{% if name %}
+<h2>Hello, {{ name }}</h2>
+{% endif %}
+{% endblock content %}
