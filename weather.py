@@ -25,9 +25,16 @@ def index():
     }
     return render_template('weather.html', city='Tel-aviv', months=months, weather=weather)
 
+
+@app.route('/user/<name>')
+def user(name):
+    return render_template('user.html', temp_name=name)
+
+
 @app.errorhandler(404)
 def not_found(e):
     return render_template('404.html')
+
 
 if __name__ == "__main__":
     app.run(debug=True)
