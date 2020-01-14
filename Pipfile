@@ -9,8 +9,8 @@ autopep8 = "*"
 
 [packages]
 flask = "*"
-flask-bootstrap4 = "*"
 flask-wtf = "*"
+flask-bootstrap = "*"
 
 [requires]
 python_version = "3.8"
