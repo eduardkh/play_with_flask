@@ -1,0 +1,17 @@
+{% import "bootstrap/wtf.html" as wtf %}
+{% extends "base.html" %}
+
+{% block title %}{{ super() }} | Welcome{% endblock title %}
+{% block content %}
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            {{ wtf.quick_form(form, enctype='multipart/form-data') }}
+            {% if image %}
+            <img src="{{ url_for('static', filename=image) }}">
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock content %}
